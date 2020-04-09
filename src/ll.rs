@@ -43,6 +43,7 @@ pub type va_list = *mut u8;
 #[derive(Debug, Clone, Copy)]
 pub struct MEVENT { pub id: c_short, pub x: c_int, pub y: c_int, pub z: c_int, pub bstate: mmask_t}
 
+#[link(name = "ncursesw")]
 extern {
     pub fn addch(_:chtype) -> c_int;
     pub fn addchnstr(_:*const chtype, _:c_int) -> c_int;
